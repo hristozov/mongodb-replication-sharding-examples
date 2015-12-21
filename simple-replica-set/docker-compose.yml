@@ -1,0 +1,24 @@
+master:
+  hostname: master
+  container_name: master
+  image: mongo
+  command: mongod --replSet example1
+  net: example1net
+  ports:
+    - "28001:27017"
+slave1:
+  hostname: slave1
+  container_name: slave1
+  image: mongo
+  command: mongod --replSet example1
+  net: example1net
+  ports:
+    - "28002:27017"
+slave2:
+  hostname: slave2
+  container_name: slave2
+  image: mongo
+  command: mongod --replSet example1
+  net: example1net
+  ports:
+    - "28003:27017"
