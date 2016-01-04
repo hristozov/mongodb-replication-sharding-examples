@@ -4,7 +4,12 @@ MongoDB replication/sharding demos.
 Uses Docker Compose.
 
 ## Demo 1 - simple replica set
-3 instances are spawned - one "master" and two "slaves".
+3 instances are spawned:
+ * master
+ * 2 slaves
 
 ## Demo 2 - sharding
-3 instances are spawned
+5 instances are spawned:
+ * `mongos` instance
+ * config instance
+ * 3 shards
