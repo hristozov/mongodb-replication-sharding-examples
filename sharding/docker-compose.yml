@@ -10,7 +10,7 @@ config:
   hostname: config
   container_name: config
   image: mongo
-  command: mongod --configsvr --dbpath /data/db
+  command: mongod --nojournal --configsvr --dbpath /data/db
   net: example2net
   ports:
     - "28010:27017"
@@ -18,7 +18,7 @@ node1:
   hostname: node1
   container_name: node1
   image: mongo
-  command: mongod
+  command: mongod --nojournal
   net: example2net
   ports:
     - "28001:27017"
@@ -26,7 +26,7 @@ node2:
   hostname: node2
   container_name: node2
   image: mongo
-  command: mongod
+  command: mongod --nojournal
   net: example2net
   ports:
     - "28002:27017"
@@ -34,7 +34,7 @@ node3:
   hostname: node3
   container_name: node3
   image: mongo
-  command: mongod
+  command: mongod --nojournal
   net: example2net
   ports:
     - "28003:27017"
