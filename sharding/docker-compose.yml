@@ -10,7 +10,7 @@ config:
   hostname: config
   container_name: config
   image: mongo
-  command: mongod --nojournal --configsvr --dbpath /data/db
+  command: mongod --configsvr --dbpath /data/db
   net: example2net
   ports:
     - "28010:27017"
