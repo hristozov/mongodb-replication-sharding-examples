@@ -1,0 +1,40 @@
+mongos:
+  hostname: mongos
+  container_name: mongos
+  image: mongo
+  command: mongos --configdb config:27019
+  net: example2net
+  ports:
+    - "28000:27017"
+config:
+  hostname: config
+  container_name: config
+  image: mongo
+  command: mongod --configsvr --dbpath /data/db
+  net: example2net
+  ports:
+    - "28010:27017"
+node1:
+  hostname: node1
+  container_name: node1
+  image: mongo
+  command: mongod
+  net: example2net
+  ports:
+    - "28001:27017"
+node2:
+  hostname: node2
+  container_name: node2
+  image: mongo
+  command: mongod
+  net: example2net
+  ports:
+    - "28002:27017"
+node3:
+  hostname: node3
+  container_name: node3
+  image: mongo
+  command: mongod
+  net: example2net
+  ports:
+    - "28003:27017"
